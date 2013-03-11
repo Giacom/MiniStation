@@ -1501,7 +1501,7 @@
 			alert("Removed:\n" + dd_list2text(removed_paths, "\n"))
 
 		var/list/offset = text2list(href_list["offset"],",")
-		var/number = dd_range(1, 100, text2num(href_list["object_count"]))
+		var/number = Clamp(1, 100, text2num(href_list["object_count"]))
 		var/X = offset.len > 0 ? text2num(offset[1]) : 0
 		var/Y = offset.len > 1 ? text2num(offset[2]) : 0
 		var/Z = offset.len > 2 ? text2num(offset[3]) : 0
@@ -1660,9 +1660,6 @@
 					//ticker.mode.forge_traitor_objectives(H.mind)
 					ticker.mode.finalize_traitor(H.mind)
 				for(var/mob/living/silicon/A in player_list)
-					if(A.stat == 2 || !A.client || !A.mind) continue
-					if(ispAI(A)) continue
-					else if(is_special_character(A)) continue
 					ticker.mode.traitors += A.mind
 					A.mind.special_role = "traitor"
 					var/datum/objective/new_objective = new

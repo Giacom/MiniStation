@@ -33,6 +33,7 @@ datum/mind
 	var/key
 	var/name				//replaces mob/var/original_name
 	var/mob/living/current
+	var/mob/living/original	//TODO: remove.not used in any meaningful way ~Carn. First I'll need to tweak the way silicon-mobs handle minds.
 	var/active = 0
 
 	var/memory
@@ -1098,6 +1099,7 @@ datum/mind
 
 	else
 		mind = new /datum/mind(key)
+		mind.original = src
 		if(ticker)
 			ticker.minds += mind
 		else
