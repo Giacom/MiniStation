@@ -2608,7 +2608,7 @@
 "aYh" = (/turf/simulated/floor{icon_state = "warning"},/area/hallway/secondary/exit)
 "aYi" = (/turf/simulated/floor{dir = 6; icon_state = "warning"},/area/hallway/secondary/exit)
 "aYj" = (/obj/machinery/door/airlock/external{name = "Escape Airlock"; req_access_txt = "2"},/turf/simulated/floor/plating,/area/hallway/secondary/exit)
-"aYk" = (/obj/machinery/conveyor{dir = 5; id = "garbage"},/turf/simulated/floor/plating,/area/maintenance/disposal)
+"aYk" = (/obj/machinery/conveyor{dir = 5; id = "mining_internal"},/turf/simulated/floor/plating,/area/maintenance/disposal)
 "aYl" = (/obj/machinery/conveyor{dir = 4; id = "garbage"},/obj/machinery/light/small{dir = 1},/turf/simulated/floor/plating,/area/maintenance/disposal)
 "aYm" = (/obj/machinery/conveyor{dir = 4; id = "garbage"},/turf/simulated/floor/plating,/area/maintenance/disposal)
 "aYn" = (/obj/structure/disposaloutlet{dir = 8},/obj/structure/disposalpipe/trunk{dir = 4},/turf/simulated/floor/plating,/area/maintenance/disposal)

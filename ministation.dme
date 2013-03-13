@@ -1137,7 +1137,7 @@
 #include "code\WorkInProgress\explosion_particles.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
-#include "maps\mini-station.0.1.0.dmm"
+#include "maps\mini-station.0.8.0.dmm"
 #include "maps\RandomZLevels\Academy.dm"
 #include "maps\RandomZLevels\challenge.dm"
 #include "maps\RandomZLevels\stationCollision.dm"

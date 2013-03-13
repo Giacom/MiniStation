@@ -20,7 +20,7 @@
 	color = "captain"
 
 /obj/item/weapon/stamp/hop
-	name = "head of personnel's rubber stamp"
+	name = "lieutenant's rubber stamp"
 	icon_state = "stamp-hop"
 	color = "hop"
 
