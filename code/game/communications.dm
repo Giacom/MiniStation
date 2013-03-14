@@ -117,6 +117,14 @@ var/const/SYND_FREQ = 1213
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1
 
+/proc/IsDepartmentFreq(var/freq)
+	for(var/chan in radiochannels)
+		if(radiochannels[chan] == 1459)
+			continue
+		if(radiochannels[chan] == freq)
+			return 1
+	return 0
+
 /* filters */
 var/const/RADIO_TO_AIRALARM = "1"
 var/const/RADIO_FROM_AIRALARM = "2"
