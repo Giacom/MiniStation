@@ -105,6 +105,8 @@
 	var/gateway_delay = 18000 //How long the gateway takes before it activates. Default is half an hour.
 	var/ghost_interaction = 0
 
+	var/general_channel_headset = 0
+
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
@@ -382,6 +384,8 @@
 			value = text2num(value)
 
 			switch(name)
+				if("general_channel_headset")
+					config.general_channel_headset = 1
 				if("health_threshold_crit")
 					config.health_threshold_crit = value
 				if("health_threshold_dead")

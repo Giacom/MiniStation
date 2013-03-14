@@ -17,6 +17,9 @@ REVIVAL_CLONING 1
 ## amount of time (in hundredths of seconds) for which a brain retains the "spark of life" after the person's death (set to -1 for infinite)
 REVIVAL_BRAIN_LIFE -1
 
+## uncomment to allow people to use their headsets for non-department frequencies
+#GENERAL_CHANNEL_HEADSET
+
 
 
 ### MOB MOVEMENT ###

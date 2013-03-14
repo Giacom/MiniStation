@@ -283,7 +283,7 @@ var/GLOBAL_RADIO_TYPE = 1 // radio type to use
 
 		if(subspace_transmission)
 
-			if(!IsDepartmentFreq(connection.frequency)) // Stop non-department channels in the expensive subspace
+			if(!config.general_channel_headset && !IsDepartmentFreq(connection.frequency)) // Stop non-department channels in the expensive subspace
 				return
 
 			// First, we want to generate a new radio signal
@@ -600,7 +600,7 @@ var/GLOBAL_RADIO_TYPE = 1 // radio type to use
 	if(!listening)
 		return -1
 	if(subspace_transmission)
-		if(!IsDepartmentFreq(freq))
+		if(!config.general_channel_headset && !IsDepartmentFreq(freq))
 			return -1
 	if(!(0 in level))
 		var/turf/position = get_turf(src)

@@ -62,11 +62,12 @@ Radio headsets will now only work with the department channels, using a handheld
 
 **Current Goal:**
 
- * Create a new map.
+ * Create a new map. [DONE]
+ * Polish the gameplay.
 
-**Map Screenshots** (Please note that the map is under construction and is subject to change):
+**Map Screenshots**:
 
-http://imgur.com/a/bjZ7X/all
+http://imgur.com/a/vtki1/all
 
 INSTALLATION
 ============
