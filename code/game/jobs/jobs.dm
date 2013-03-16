@@ -44,7 +44,7 @@ var/const/ASSISTANT			=(1<<13)
 
 
 var/list/assistant_occupations = list(
-	"Assistant",
+	"Unemployed",
 	"Cargo Miner"
 )
 

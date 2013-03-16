@@ -288,7 +288,7 @@ datum/preferences
 				var/available_in_days = job.available_in_days(user.client)
 				HTML += "<font color=red>[rank]</font></td><td><font color=red> \[IN [(available_in_days)] DAYS\]</font></td></tr>"
 				continue
-			if((job_civilian_low & ASSISTANT) && (rank != "Assistant"))
+			if((job_civilian_low & ASSISTANT) && (rank != "Unemployed"))
 				HTML += "<font color=orange>[rank]</font></td><td></td></tr>"
 				continue
 			if((rank in command_positions) || (rank == "AI"))//Bold head jobs
@@ -300,7 +300,7 @@ datum/preferences
 
 			HTML += "<a class='white' href='?_src_=prefs;preference=job;task=input;text=[rank]'>"
 
-			if(rank == "Assistant")//Assistant is special
+			if(rank == "Unemployed")//Assistant is special
 				if(job_civilian_low & ASSISTANT)
 					HTML += "<font color=green>Yes</font>"
 				else
@@ -322,7 +322,7 @@ datum/preferences
 
 		HTML += "</center></table>"
 
-		HTML += "<center><br><a href='?_src_=prefs;preference=job;task=random'>[userandomjob ? "Get random job if preferences unavailable" : "Be an Assistant if preference unavailable"]</a></center>"
+		HTML += "<center><br><a href='?_src_=prefs;preference=job;task=random'>[userandomjob ? "Get random job if preferences unavailable" : "Be a Unemployed if preference unavailable"]</a></center>"
 		HTML += "<center><a href='?_src_=prefs;preference=job;task=reset'>Reset Preferences</a></center>"
 
 		user << browse(null, "window=preferences")
@@ -341,7 +341,7 @@ datum/preferences
 			ShowChoices(user)
 			return
 
-		if(role == "Assistant")
+		if(role == "Unemployed")
 			if(job_civilian_low & job.flag)
 				job_civilian_low &= ~job.flag
 			else

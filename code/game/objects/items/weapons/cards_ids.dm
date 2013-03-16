@@ -129,7 +129,7 @@
 			return
 		src.registered_name = t
 
-		var u = copytext(sanitize(input(user, "What occupation would you like to put on this card?\nNote: This will not grant any access levels other than Maintenance.", "Agent card job assignment", "Assistant")),1,MAX_MESSAGE_LEN)
+		var u = copytext(sanitize(input(user, "What occupation would you like to put on this card?\nNote: This will not grant any access levels other than Maintenance.", "Agent card job assignment", "Unemployed")),1,MAX_MESSAGE_LEN)
 		if(!u)
 			alert("Invalid assignment.")
 			src.registered_name = ""
