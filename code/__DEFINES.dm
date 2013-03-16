@@ -246,7 +246,7 @@ var/turf/space/Space_Tile = locate(/turf/space) // A space tile to reference whe
 #define GAS_N2O	(1 << 4)
 
 
-var/list/accessable_z_levels = list("1" = 5, "3" = 10, "4" = 15, "5" = 10, "6" = 60)
+var/list/accessable_z_levels = list("1" = 20, "4" = 40, "5" = 40)
 //This list contains the z-level numbers which can be accessed via space travel and the percentile chances to get there.
 //(Exceptions: extended, sandbox and nuke) -Errorage
 //Was list("3" = 30, "4" = 70).
