@@ -22,10 +22,10 @@
 	//Jobs you cannot open new positions for
 	var/list/blacklisted = list(
 		"AI",
-		"Assistant",
+		"Unemployed",
 		"Cyborg",
 		"Captain",
-		"Head of Personnel",
+		"Lieutenant",
 		"Head of Security",
 		"Warden",
 		"Chief Engineer",
@@ -128,7 +128,7 @@
 		else
 			if(check_access(scan))
 			// EDIT SPECIFIC JOB
-				dat = "<a href='?src=\ref[src];choice=return'><i>Return</i></a><hr>"	
+				dat = "<a href='?src=\ref[src];choice=return'><i>Return</i></a><hr>"
 				dat += "<h1>[j.title]: [j.current_positions]/[j.total_positions]</h1><hr>"
 				//Make sure antags can't completely ruin rounds
 
@@ -140,8 +140,8 @@
 						dat += "<b>You cannot open any more positions for this job.</b><br>"
 					if(0)
 						dat += "<b>You cannot open positions for this job.</b><br>"
-	
-				
+
+
 				switch(can_close_job(j))
 					if(1)
 						dat += "<a href='?src=\ref[src];choice=make_job_unavailable'>Close Position</a>"
@@ -398,7 +398,7 @@
 				return 0
 			//Allow instant closing without cooldown if a position has been opened before
 			if(opened_positions[edit_job_target] <= 0)
-				time_last_closed_position = world.time / 10		
+				time_last_closed_position = world.time / 10
 			j.total_positions--
 			opened_positions[edit_job_target]--
 
