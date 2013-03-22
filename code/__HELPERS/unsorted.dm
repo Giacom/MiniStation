@@ -32,6 +32,13 @@
 	return text("#[][][]", textr, textg, textb)
 	return
 
+//Returns the middle-most value
+/proc/dd_range(var/low, var/high, var/num)
+	return max(low,min(high,num))
+
+//Makes sure MIDDLE is between LOW and HIGH. If not, it adjusts it. Returns the adjusted value.
+/proc/between(var/low, var/middle, var/high)
+	return max(min(middle, high), low)
 
 /proc/Get_Angle(atom/movable/start,atom/movable/end)//For beams.
 	if(!start || !end) return 0

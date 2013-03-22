@@ -126,7 +126,7 @@ obj/machinery/atmospherics/binary/volume_pump
 			on = !on
 
 		if("set_transfer_rate" in signal.data)
-			transfer_rate = Clamp(
+			transfer_rate = between(
 				0,
 				text2num(signal.data["set_transfer_rate"]),
 				air1.volume

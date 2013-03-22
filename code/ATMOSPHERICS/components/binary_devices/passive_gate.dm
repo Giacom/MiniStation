@@ -113,7 +113,7 @@ obj/machinery/atmospherics/binary/passive_gate
 			on = !on
 
 		if("set_output_pressure" in signal.data)
-			target_pressure = Clamp(
+			target_pressure = between(
 				0,
 				text2num(signal.data["set_output_pressure"]),
 				ONE_ATMOSPHERE*50

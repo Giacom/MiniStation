@@ -128,7 +128,7 @@ obj/machinery/atmospherics/binary/pump
 			on = !on
 
 		if("set_output_pressure" in signal.data)
-			target_pressure = Clamp(
+			target_pressure = between(
 				0,
 				text2num(signal.data["set_output_pressure"]),
 				ONE_ATMOSPHERE*50
