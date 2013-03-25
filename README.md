@@ -1,12 +1,10 @@
 MiniStation Mod
 ================================
 
-Code: https://github.com/tgstation/-tg-station
+Code: https://github.com/Giacomand/MiniStation
 
 Original TG Station
 ================================
-
-tgstation13 v1.0 - 6 October 2010
 
 Website: http://nanotrasen.com
 Code: https://github.com/tgstation/-tg-station
