@@ -65,9 +65,9 @@ Radio headsets will now only work with the department channels, using a handheld
  * Create a new map. [DONE]
  * Polish the gameplay.
 
-**Map Screenshots**:
+**Map Screenshot**:
 
-http://imgur.com/a/vtki1/all
+[View High Quality Map](http://filesmelt.com/dl/Map57.png)
 
 INSTALLATION
 ============
