@@ -2,6 +2,7 @@ MiniStation Mod
 ================================
 
 Code: https://github.com/Giacomand/MiniStation
+Created By: Giacomand/Giacom
 
 Original TG Station
 ================================
