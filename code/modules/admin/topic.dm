@@ -360,9 +360,56 @@
 
 	/////////////////////////////////////new ban stuff
 
-	else if(href_list["jobban2"])
-//		if(!check_rights(R_BAN))	return
+	else if(href_list["appearanceban"])
+		if(!check_rights(R_BAN))
+			return
+		var/mob/M = locate(href_list["appearanceban"])
+		if(!ismob(M))
+			usr << "This can only be used on instances of type /mob"
+			return
+		if(!M.ckey)	//sanity
+			usr << "This mob has no ckey"
+			return
 
+		var/banreason = appearance_isbanned(M)
+		if(banreason)
+	/*		if(!config.ban_legacy_system)
+				usr << "Unfortunately, database based unbanning cannot be done through this panel"
+				DB_ban_panel(M.ckey)
+				return	*/
+			switch(alert("Reason: '[banreason]' Remove appearance ban?","Please Confirm","Yes","No"))
+				if("Yes")
+					ban_unban_log_save("[key_name(usr)] removed [key_name(M)]'s appearance ban")
+					log_admin("[key_name(usr)] removed [key_name(M)]'s appearance ban")
+					feedback_inc("ban_appearance_unban", 1)
+					DB_ban_unban(M.ckey, BANTYPE_APPEARANCE)
+					appearance_unban(M)
+					message_admins("\blue [key_name_admin(usr)] removed [key_name_admin(M)]'s appearance ban", 1)
+					M << "\red<BIG><B>[usr.client.ckey] has removed your appearance ban.</B></BIG>"
+
+		else switch(alert("Appearance ban [M.ckey]?",,"Yes","No", "Cancel"))
+			if("Yes")
+				var/reason = input(usr,"Reason?","reason","Metafriender") as text|null
+				if(!reason)
+					return
+				ban_unban_log_save("[key_name(usr)] appearance banned [key_name(M)]. reason: [reason]")
+				log_admin("[key_name(usr)] appearance banned [key_name(M)]. \nReason: [reason]")
+				feedback_inc("ban_appearance",1)
+				DB_ban_record(BANTYPE_APPEARANCE, M, -1, reason)
+				appearance_fullban(M, "[reason]; By [usr.ckey] on [time2text(world.realtime)]")
+				notes_add(M.ckey, "Appearance banned - [reason]")
+				message_admins("\blue [key_name_admin(usr)] appearance banned [key_name_admin(M)]", 1)
+				M << "\red<BIG><B>You have been appearance banned by [usr.client.ckey].</B></BIG>"
+				M << "\red <B>The reason is: [reason]</B>"
+				M << "\red Appearance ban can be lifted only upon request."
+				if(config.banappeals)
+					M << "\red To try to resolve this matter head to [config.banappeals]"
+				else
+					M << "\red No ban appeals URL has been set."
+			if("No")
+				return
+
+	else if(href_list["jobban2"])
 		var/mob/M = locate(href_list["jobban2"])
 		if(!ismob(M))
 			usr << "This can only be used on instances of type /mob"
@@ -781,11 +828,6 @@
 	//Player Notes
 	else if(href_list["notes"])
 		var/ckey = href_list["ckey"]
-		if(!ckey)
-			var/mob/M = locate(href_list["mob"])
-			if(ismob(M))
-				ckey = M.ckey
-
 		switch(href_list["notes"])
 			if("show")
 				notes_show(ckey)
@@ -886,16 +928,7 @@
 
 	else if(href_list["mute"])
 		if(!check_rights(R_ADMIN))	return
-
-		var/mob/M = locate(href_list["mute"])
-		if(!ismob(M))	return
-		if(!M.client)	return
-
-		var/mute_type = href_list["mute_type"]
-		if(istext(mute_type))	mute_type = text2num(mute_type)
-		if(!isnum(mute_type))	return
-
-		cmd_admin_mute(M, mute_type)
+		cmd_admin_mute(href_list["mute"], text2num(href_list["mute_type"]))
 
 	else if(href_list["c_mode"])
 		if(!check_rights(R_ADMIN))	return
@@ -1296,7 +1329,7 @@
 		src.owner << "Name = <b>[M.name]</b>; Real_name = [M.real_name]; Mind_name = [M.mind?"[M.mind.name]":""]; Key = <b>[M.key]</b>;"
 		src.owner << "Location = [location_description];"
 		src.owner << "[special_role_description]"
-		src.owner << "(<a href='?src=\ref[usr];priv_msg=\ref[M]'>PM</a>) (<A HREF='?src=\ref[src];adminplayeropts=\ref[M]'>PP</A>) (<A HREF='?_src_=vars;Vars=\ref[M]'>VV</A>) (<A HREF='?src=\ref[src];subtlemessage=\ref[M]'>SM</A>) (<A HREF='?src=\ref[src];adminplayerobservejump=\ref[M]'>JMP</A>) (<A HREF='?src=\ref[src];secretsadmin=check_antagonist'>CA</A>)"
+		src.owner << "(<a href='?priv_msg=[M.ckey]'>PM</a>) (<A HREF='?src=\ref[src];adminplayeropts=\ref[M]'>PP</A>) (<A HREF='?_src_=vars;Vars=\ref[M]'>VV</A>) (<A HREF='?src=\ref[src];subtlemessage=\ref[M]'>SM</A>) (<A HREF='?src=\ref[src];adminplayerobservejump=\ref[M]'>JMP</A>) (<A HREF='?src=\ref[src];secretsadmin=check_antagonist'>CA</A>)"
 
 	else if(href_list["adminspawncookie"])
 		if(!check_rights(R_ADMIN|R_FUN))	return
