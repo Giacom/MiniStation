@@ -487,7 +487,6 @@
 	return
 
 
-
 /obj/machinery/power/apc/interact(mob/user)
 	if(!user)
 		return
@@ -787,7 +786,6 @@
 	else if (href_list["occupyapc"])
 		malfoccupy(usr)
 
-
 	else if (href_list["deoccupyapc"])
 		malfvacate()
 
@@ -820,6 +818,10 @@
 	src.occupant.verbs += /datum/game_mode/malfunction/proc/takeover
 	src.occupant.cancel_camera()
 
+	for(var/obj/item/weapon/pinpointer/point in world)
+		point.the_disk = src //the pinpointer will detect the shunted AI
+
+
 /obj/machinery/power/apc/proc/malfvacate(var/forced)
 	if(!src.occupant)
 		return
@@ -835,6 +837,9 @@
 			src.occupant.loc = src.loc
 			src.occupant.death()
 			src.occupant.gib()
+
+	for(var/obj/item/weapon/pinpointer/point in world)
+		point.the_disk = null //the pinpointer will go back to pointing at the nuke disc.
 
 
 /obj/machinery/power/apc/proc/ion_act()

@@ -16,16 +16,16 @@
 	//Cooldown for closing positions in seconds
 	//if set to -1: No cooldown... probably a bad idea
 	//if set to 0: Not able to close "original" positions. You can only close positions that you have opened before
-	var/close_position_cooldown = 280
+	var/change_position_cooldown = 280
 	//Keeps track of the time
-	var/time_last_closed_position = 0
+	var/time_last_changed_position = 0
 	//Jobs you cannot open new positions for
 	var/list/blacklisted = list(
 		"AI",
-		"Unemployed",
+		"Assistant",
 		"Cyborg",
 		"Captain",
-		"Lieutenant",
+		"Head of Personnel",
 		"Head of Security",
 		"Warden",
 		"Chief Engineer",
@@ -78,8 +78,11 @@
 /obj/machinery/computer/card/proc/can_open_job(var/datum/job/job)
 	if(job)
 		if(!job_blacklisted(job.title))
-			if((job.total_positions <= player_list.len * (max_relative_positions / 100)) || (opened_positions[job.title] < 0))
-				return 1
+			if((job.total_positions <= player_list.len * (max_relative_positions / 100)))
+				var/delta = (world.time / 10) - time_last_changed_position
+				if((change_position_cooldown < delta) || (opened_positions[job.title] < 0))
+					return 1
+				return -2
 			return -1
 	return 0
 
@@ -88,10 +91,9 @@
 	if(job)
 		if(!job_blacklisted(job.title))
 			if(job.total_positions > job.current_positions)
-				if(close_position_cooldown != 0)			//I guess this is so you can disable this functionality
-					var/delta = (world.time / 10) - time_last_closed_position
-					if((close_position_cooldown < delta) || (opened_positions[job.title] > 0))
-						return 1
+				var/delta = (world.time / 10) - time_last_changed_position
+				if((change_position_cooldown < delta) || (opened_positions[job.title] > 0))
+					return 1
 				return -2
 			return -1
 	return 0
@@ -128,7 +130,7 @@
 		else
 			if(check_access(scan))
 			// EDIT SPECIFIC JOB
-				dat = "<a href='?src=\ref[src];choice=return'><i>Return</i></a><hr>"
+				dat = "<a href='?src=\ref[src];choice=return'><i>Return</i></a><hr>"	
 				dat += "<h1>[j.title]: [j.current_positions]/[j.total_positions]</h1><hr>"
 				//Make sure antags can't completely ruin rounds
 
@@ -138,20 +140,25 @@
 						dat += "<a href='?src=\ref[src];choice=make_job_available'>Open Position</a><br>"
 					if(-1)
 						dat += "<b>You cannot open any more positions for this job.</b><br>"
+					if(-2)
+						var/time_to_wait = round(change_position_cooldown - ((world.time / 10) - time_last_changed_position), 1)
+						var/mins = round(time_to_wait / 60)
+						var/seconds = time_to_wait - (60*mins)
+						dat += "<b>You have to wait [mins]:[(seconds < 10) ? "0[seconds]" : "[seconds]"] minutes before you can open this position.</b>"
 					if(0)
 						dat += "<b>You cannot open positions for this job.</b><br>"
-
-
+	
+				
 				switch(can_close_job(j))
 					if(1)
 						dat += "<a href='?src=\ref[src];choice=make_job_unavailable'>Close Position</a>"
 					if(-1)
 						dat += "<b>You cannot close any more positions for this job.</b><br>"
 					if(-2)
-						var/time_to_wait = round(close_position_cooldown - ((world.time / 10) - time_last_closed_position), 1)
+						var/time_to_wait = round(change_position_cooldown - ((world.time / 10) - time_last_changed_position), 1)
 						var/mins = round(time_to_wait / 60)
 						var/seconds = time_to_wait - (60*mins)
-						dat += "<b>You have to wait [mins]:[(seconds < 10) ? "0[seconds]" : "[seconds]"] minutes before you can close a position.</b>"
+						dat += "<b>You have to wait [mins]:[(seconds < 10) ? "0[seconds]" : "[seconds]"] minutes before you can close this position.</b>"
 					if(0)
 						dat += "<b>You cannot close positions for this job.</b><br>"
 			else
@@ -386,6 +393,8 @@
 				return 0
 			if(can_open_job(j) != 1)
 				return 0
+			if(opened_positions[edit_job_target] >= 0)
+				time_last_changed_position = world.time / 10
 			j.total_positions++
 			opened_positions[edit_job_target]++
 
@@ -398,7 +407,7 @@
 				return 0
 			//Allow instant closing without cooldown if a position has been opened before
 			if(opened_positions[edit_job_target] <= 0)
-				time_last_closed_position = world.time / 10
+				time_last_changed_position = world.time / 10
 			j.total_positions--
 			opened_positions[edit_job_target]--
 
