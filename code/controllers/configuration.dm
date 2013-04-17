@@ -106,6 +106,8 @@
 	var/ghost_interaction = 0
 
 	var/general_channel_headset = 0
+	var/silent_ai = 0
+	var/silent_borg = 0
 
 
 /datum/configuration/New()
@@ -337,6 +339,10 @@
 					config.force_random_names		= 1
 				if("allow_ai")
 					config.allow_ai					= 1
+				if("silent_ai")
+					config.silent_ai 				= 1
+				if("silent_borg")
+					config.silent_borg				= 1
 				else
 					diary << "Unknown setting in configuration: '[name]'"
 
