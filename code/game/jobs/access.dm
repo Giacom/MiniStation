@@ -227,7 +227,7 @@
 		if(3) //research
 			return list(access_research)
 		if(4) //engineering and maintenance
-			return list(access_maint_tunnels, access_engine, access_external_airlocks, access_tcomsat)
+			return list(access_maint_tunnels, access_engine, access_external_airlocks, access_tcomsat, access_atmospherics)
 		if(5) //command
 			return list(access_heads, access_RC_announce, access_keycard_auth, access_change_ids, access_eva, access_all_personal_lockers, access_hop, access_captain)
 		if(6) //station general

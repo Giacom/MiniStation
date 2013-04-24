@@ -33,6 +33,7 @@
 		else
 			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/ids(H.back), slot_in_backpack)
 		H.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/laser/captain(H), slot_s_store)
+		H.equip_to_slot_or_del(new /obj/item/weapon/disk/nuclear(H), slot_l_store)
 		var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(H)
 		L.imp_in = H
 		L.implanted = 1
