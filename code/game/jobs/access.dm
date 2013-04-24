@@ -225,7 +225,7 @@
 		if(2) //medbay
 			return list(access_medical, access_chemistry, access_surgery)
 		if(3) //research
-			return list(access_research)
+			return list(access_research, access_tox)
 		if(4) //engineering and maintenance
 			return list(access_maint_tunnels, access_engine_equip, access_tech_storage, access_construction, access_engine, access_external_airlocks, access_tcomsat, access_atmospherics)
 		if(5) //command

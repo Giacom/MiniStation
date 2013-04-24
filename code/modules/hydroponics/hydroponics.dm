@@ -906,3 +906,6 @@ obj/machinery/hydroponics/attackby(var/obj/item/O as obj, var/mob/user as mob)
 		else
 			SetLuminosity(0)
 		return
+
+/obj/machinery/hydroponics/unattached
+	anchored = 0

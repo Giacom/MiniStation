@@ -2,7 +2,7 @@
 	name = "prisoner management console"
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "explosive"
-	req_access = list(access_armory)
+	req_access = list(access_security)
 	circuit = "/obj/item/weapon/circuitboard/prisoner"
 	var/id = 0.0
 	var/temp = null

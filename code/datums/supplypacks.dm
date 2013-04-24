@@ -222,6 +222,13 @@
 	containername = "hydroponics crate"
 	access = access_hydroponics
 
+/datum/supply_packs/hydro_tray
+	name = "Hydroponics Tray"
+	contains = list(/obj/machinery/hydroponics/unattached)
+	cost = 10
+	containertype = /obj/structure/largecrate
+	containername = "hydropnics tray crate"
+
 //farm animals - useless and annoying, but potentially a good source of food
 /datum/supply_packs/cow
 	name = "Cow Crate"
@@ -390,6 +397,34 @@
 	cost = 8
 	containertype = /obj/structure/largecrate
 	containername = "fuel tank crate"
+
+/datum/supply_packs/oxygen
+	name = "Oxygen Canister"
+	contains = list(/obj/machinery/portable_atmospherics/canister/oxygen)
+	cost = 15
+	containertype = /obj/structure/largecrate
+	containername = "oxygen canister crate"
+
+/datum/supply_packs/toxins
+	name = "Toxins Canister"
+	contains = list(/obj/machinery/portable_atmospherics/canister/toxins)
+	cost = 30
+	containertype = /obj/structure/largecrate
+	containername = "toxins canister crate"
+
+/datum/supply_packs/nitrogen
+	name = "Nitrogen Canister"
+	contains = list(/obj/machinery/portable_atmospherics/canister/nitrogen)
+	cost = 20
+	containertype = /obj/structure/largecrate
+	containername = "nitrogen canister crate"
+
+/datum/supply_packs/carbon_dio
+	name = "Carbon Dioxide Canister"
+	contains = list(/obj/machinery/portable_atmospherics/canister/carbon_dioxide)
+	cost = 35
+	containertype = /obj/structure/largecrate
+	containername = "carbon dioxide canister crate"
 
 /datum/supply_packs/solar
 	name = "Solar Pack crate"
