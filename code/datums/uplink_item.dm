@@ -191,17 +191,17 @@ var/list/uplink_items = list()
 /datum/uplink_item/device_tools/binary
 	name = "Binary Translator Key"
 	item = /obj/item/device/encryptionkey/binary
-	cost = 3
+	cost = 1
 
 /datum/uplink_item/device_tools/hacked_module
 	name = "Hacked AI Upload Module"
 	item = /obj/item/weapon/aiModule/syndicate
-	cost = 7
+	cost = 5
 
 /datum/uplink_item/device_tools/plastic_explosives
 	name = "C-4 (Destroys Walls)"
 	item = /obj/item/weapon/plastique
-	cost = 2
+	cost = 3
 
 /datum/uplink_item/device_tools/powersink
 	name = "Powersink (DANGER!)"
@@ -211,14 +211,14 @@ var/list/uplink_items = list()
 /datum/uplink_item/device_tools/singularity_beacon
 	name = "Singularity Beacon (DANGER!)"
 	item = /obj/item/device/sbeacondrop
-	cost = 7
-
+	cost = 3
+/*
 /datum/uplink_item/device_tools/teleporter
 	name = "Teleporter Circuit Board"
 	item = /obj/item/weapon/circuitboard/teleporter
 	cost = 20
 	gamemodes = list("nuclear emergency")
-
+*/
 
 // IMPLANTS
 

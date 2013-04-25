@@ -834,7 +834,7 @@
 "qb" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 2; external_pressure_bound = 101.325; on = 1; pressure_checks = 1},/turf/simulated/floor,/area/hallway/primary/central)
 "qc" = (/obj/structure/table/reinforced,/obj/item/weapon/folder/white,/turf/simulated/floor{icon_state = "white"},/area/medical/medbay)
 "qd" = (/obj/structure/stool/bed/chair/office/light{dir = 8},/obj/effect/landmark/start{name = "Medical Doctor"},/turf/simulated/floor{icon_state = "white"},/area/medical/medbay)
-"qe" = (/obj/machinery/door/airlock/glass_medical{id_tag = null; name = "Cryo"; req_access_txt = "0"},/turf/simulated/floor{icon_state = "white"},/area/medical/medbay)
+"qe" = (/obj/machinery/door/airlock/glass_medical{id_tag = "MedbayFoyer"; name = "Medbay"; req_access_txt = "5"},/turf/simulated/floor{icon_state = "white"},/area/medical/medbay)
 "qf" = (/obj/machinery/alarm{dir = 8; icon_state = "alarm0"; pixel_x = 24},/turf/simulated/floor{icon_state = "white"},/area/medical/medbay)
 "qg" = (/obj/structure/cable{d1 = 1; d2 = 4; icon_state = "1-4"; tag = "90Curve"},/turf/simulated/floor{tag = "icon-L2 (EAST)"; icon_state = "L2"; dir = 4},/area/hallway/secondary/exit)
 "qh" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/structure/cable{d1 = 4; d2 = 8; icon_state = "4-8"; pixel_x = 0; tag = ""},/turf/simulated/floor{tag = "icon-L4 (EAST)"; icon_state = "L4"; dir = 4},/area/hallway/secondary/exit)

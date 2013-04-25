@@ -37,6 +37,7 @@
 		name = "Power-ON Cartridge"
 		icon_state = "cart-e"
 		access_engine = 1
+		access_atmos = 1
 
 	atmos
 		name = "BreatheDeep Cartridge"
