@@ -49,7 +49,7 @@ Many jobs have been combined or just plainly cut out. These are the remaining jo
  * Chemist - Creating useful chemicals for the crew to use.
  * Unemployed x∞ - Not in charge at all. Basically the assistant of TG. Get a job!
 
-There will be 15 jobs (not including Unemployed) available on mini-TG station. There is a more simplified command system, with the Captain being the big boss and the Lieutenant being second in command. The heads will have control over all departments and jobs.
+There will be 17 jobs (not including Unemployed) available on mini-TG station. There is a more simplified command system, with the Captain being the big boss and the Lieutenant being second in command. The heads will have control over all departments and jobs.
 
 **What else has changed?**
 
