@@ -27,27 +27,27 @@ Server hosters who want to host a server for a player count of around 5 to 20 pe
 
 **What about the map?**
 
-Again, it will be changed, downsized and will have only the necessities to have a rich low population round.
+The map has been created from the ground up with population size in mind. There is a link to it below.
 
 Details
 =
 
-**Which jobs will be changed exactly?**
+**What are the jobs?**
 
-Since many jobs are going to be merged into each other, I will list what jobs the station will have and their purpose.
+Many jobs have been combined or just plainly cut out. These are the remaining jobs with their duties next to them.
 
  * Captain - Make sure your station is running.
- * Lieutenant - Protect the Captain and be his right hand man.
- * Cargo Miner x2 - Running cargo bay and taking requests from other departments.
- * Bartender - Keeping the bar, serving drinks and food.
- * Janitor - Cleans the station.
+ * Lieutenant - You're second in command, protect the Captain and be his right hand man.
+ * Cargo Miner x2 - Running cargo bay and mining minerals for the station.
+ * Bartender - Keeping the bar, serving drinks and food. Hire the unemployeed to grow food for you, or do it yourself.
+ * Janitor - Cleans the station, removes litter.
  * Station Engineer x3 - Keeping the power running and fixing station damage.
  * Security Officer x2 - Protecting the crewmembers and serving space law.
  * Detective - Using forensic science to help security officers catch criminals.
- * Scientist x2 - Research and development of new technologies. Create bombs.
- * Medical Doctor x2 - Healing the crew. Cloning dead crew.
- * Chemist - Creating useful chemicals.
- * Unemployed x∞ - Not in charge at all. Basically the assistant of TG.
+ * Scientist x2 - Research and development of new technologies and create bombs.
+ * Medical Doctor x2 - Healing the crew, performing surgeries and cloning dead crew.
+ * Chemist - Creating useful chemicals for the crew to use.
+ * Unemployed x∞ - Not in charge at all. Basically the assistant of TG. Get a job!
 
 There will be 15 jobs (not including Unemployed) available on mini-TG station. There is a more simplified command system, with the Captain being the big boss and the Lieutenant being second in command. The heads will have control over all departments and jobs.
 
@@ -55,13 +55,13 @@ There will be 15 jobs (not including Unemployed) available on mini-TG station. T
 
 Game Modes have been changed to accommodate the low population count. All except traitor, changeling, revolution and extended are disabled by default. You can change this in the config file.
 
-There will only be one antag in changeling or traitor. In revolution there will be two rev-heads. Due to no starting AI, there is no malfunction; so I don’t advise enabling it. There are no plans to add a starting AI but you are still able to construct an AI.
+There is much less of a player to traitor ratio, meaning there's only 1 traitor for every 10 players. Changelings will always come in singles.
+In revolution there will be two rev-heads. Due to no starting AI, there is no malfunction; so I don’t advise enabling it.
+There are no plans to add a starting AI but you are still able to construct an AI through research.
 
-Radio headsets will now only work with the department channels, using a handheld radio or intercom is required.
 
 **Current Goal:**
 
- * Create a new map. [DONE]
  * Polish the gameplay.
 
 **Map Screenshot**:
