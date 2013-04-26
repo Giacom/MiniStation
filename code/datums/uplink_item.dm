@@ -93,7 +93,7 @@ var/list/uplink_items = list()
 /datum/uplink_item/dangerous/revolver
 	name = "Revolver"
 	item = /obj/item/weapon/gun/projectile
-	cost = 6
+	cost = 8
 
 /datum/uplink_item/dangerous/ammo
 	name = "Ammo-357"
@@ -124,7 +124,7 @@ var/list/uplink_items = list()
 /datum/uplink_item/stealthy_weapons/para_pen
 	name = "Paralysis Pen"
 	item = /obj/item/weapon/pen/paralysis
-	cost = 3
+	cost = 4
 
 /datum/uplink_item/stealthy_weapons/detomatix
 	name = "Detomatix PDA Cartridge"
@@ -140,27 +140,27 @@ var/list/uplink_items = list()
 /datum/uplink_item/stealthy_tools/chameleon_jumpsuit
 	name = "Chameleon Jumpsuit"
 	item = /obj/item/clothing/under/chameleon
-	cost = 3
+	cost = 2
 
 /datum/uplink_item/stealthy_tools/syndigolashes
 	name = "No-Slip Syndicate Shoes"
 	item = /obj/item/clothing/shoes/syndigaloshes
-	cost = 2
+	cost = 1
 
 /datum/uplink_item/stealthy_tools/agent_card
 	name = "Agent ID Card"
 	item = /obj/item/weapon/card/id/syndicate
-	cost = 2
+	cost = 1
 
 /datum/uplink_item/stealthy_tools/voice_changer
 	name = "Voice Changer"
 	item = /obj/item/clothing/mask/gas/voice
-	cost = 4
+	cost = 3
 
 /datum/uplink_item/stealthy_tools/chameleon_proj
 	name = "Chameleon-Projector"
 	item = /obj/item/device/chameleon
-	cost = 4
+	cost = 3
 
 
 // DEVICE AND TOOLS
@@ -186,7 +186,7 @@ var/list/uplink_items = list()
 /datum/uplink_item/device_tools/thermal
 	name = "Thermal Imaging Glasses"
 	item = /obj/item/clothing/glasses/thermal/syndi
-	cost = 3
+	cost = 2
 
 /datum/uplink_item/device_tools/binary
 	name = "Binary Translator Key"
@@ -206,7 +206,7 @@ var/list/uplink_items = list()
 /datum/uplink_item/device_tools/powersink
 	name = "Powersink (DANGER!)"
 	item = /obj/item/device/powersink
-	cost = 5
+	cost = 6
 
 /datum/uplink_item/device_tools/singularity_beacon
 	name = "Singularity Beacon (DANGER!)"
