@@ -66,7 +66,7 @@ There are no plans to add a starting AI but you are still able to construct an A
 
 **Map Screenshot**:
 
-[View High Quality Map](http://filesmelt.com/dl/Map57.png)
+[View High Quality Map](http://filesmelt.com/dl/Map59.png)
 
 INSTALLATION
 ============
