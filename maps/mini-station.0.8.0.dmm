@@ -277,7 +277,7 @@
 "fq" = (/obj/effect/light_emitter{luminosity = 12},/turf/simulated/floor/airless,/area/toxins/test_area)
 "fr" = (/turf/simulated/floor{dir = 8; icon_state = "cautioncorner"},/area/quartermaster/storage)
 "fs" = (/obj/structure/extinguisher_cabinet{pixel_x = 5; pixel_y = -32},/turf/simulated/floor,/area/quartermaster/storage)
-"ft" = (/obj/machinery/door/airlock/glass_mining{name = "Cargo Office"; req_access_txt = "50"},/turf/simulated/floor,/area/quartermaster/storage)
+"ft" = (/obj/machinery/door/airlock/glass_mining{name = "Cargo Office"; req_access_txt = "31"},/turf/simulated/floor,/area/quartermaster/storage)
 "fu" = (/obj/machinery/status_display{density = 0; layer = 4},/turf/simulated/wall/r_wall,/area/security/brig)
 "fv" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 5},/obj/structure/closet/secure_closet/security,/turf/simulated/floor,/area/security/brig)
 "fw" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/turf/simulated/floor,/area/security/brig)
