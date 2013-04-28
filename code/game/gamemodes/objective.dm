@@ -269,7 +269,6 @@ datum/objective/steal
 		"the captain's antique laser gun" = /obj/item/weapon/gun/energy/laser/captain,
 		"an RCD" = /obj/item/weapon/rcd,
 		"a jetpack" = /obj/item/weapon/tank/jetpack,
-		"a captain's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a pair of magboots" = /obj/item/clothing/shoes/magboots,
 		"the station blueprints" = /obj/item/blueprints,
 		"28 moles of plasma (full tank)" = /obj/item/weapon/tank,
