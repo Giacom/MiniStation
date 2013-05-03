@@ -9,15 +9,9 @@ var/const/Sqrt2	= 1.41421356
 	var/a = arccos(x / sqrt(x*x + y*y))
 	return y >= 0 ? a : -a
 
-// Returns x rounded down.
-/proc/Floor(x)
-	return round(x)
-
-// Returns x rounded up.
 /proc/Ceiling(x)
 	return -round(-x)
 
-//Makes sure VAL is between MIN and MAX. If not, it adjusts it. Returns the adjusted value.
 /proc/Clamp(val, min, max)
 	return max(min, min(val, max))
 
@@ -29,7 +23,6 @@ var/const/Sqrt2	= 1.41421356
 /proc/Csc(x)
 	return 1 / sin(x)
 
-// Return a if it's true, b if it isn't.
 /proc/Default(a, b)
 	return a ? a : b
 
@@ -50,9 +43,8 @@ var/const/Sqrt2	= 1.41421356
 /proc/IsInRange(val, min, max)
 	return min <= val && val <= max
 
-// Returns whether the number is an integer (no decimal places)
 /proc/IsInteger(x)
-	return Floor(x) == x
+	return round(x) == x
 
 /proc/IsOdd(x)
 	return !IsEven(x)
@@ -115,15 +107,28 @@ var/const/Sqrt2	= 1.41421356
 // min is inclusive, max is exclusive
 /proc/Wrap(val, min, max)
 	var/d = max - min
-	var/t = Floor((val - min) / d)
+	var/t = round((val - min) / d)
 	return val - (t * d)
 
-proc/Arctan(x)
-	var/y=arcsin(x/sqrt(1+x*x))
-	return y
-
-//Returns whether or not A is the middle most value
-/proc/InRange(var/A, var/lower, var/upper)
-	if(A < lower) return 0
-	if(A > upper) return 0
-	return 1
+//polar variant of a gaussian distributed PRNG
+//since this method produces two random numbers, one is saved for subsequent calls
+//(making the cost negligble for every second call)
+//This will return +/- decimals, situated about mean with standard deviation stddev
+var/gaussian_next
+#define ACCURACY 10000
+/proc/gaussian(mean, stddev)
+	var/R1;var/R2;var/working
+	if(gaussian_next != null)
+		R1 = gaussian_next
+		gaussian_next = null
+	else
+		do
+			R1 = rand(-ACCURACY,ACCURACY)/ACCURACY
+			R2 = rand(-ACCURACY,ACCURACY)/ACCURACY
+			working = R1*R1 + R2*R2
+		while(working >= 1)
+		R1 *= working
+		R2 *= working	
+		gaussian_next = R2
+	return (mean + stddev * R1)
+#undef ACCURACY
