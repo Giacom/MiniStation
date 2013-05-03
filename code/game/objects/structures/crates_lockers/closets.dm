@@ -9,6 +9,7 @@
 	var/icon_opened = "open"
 	var/opened = 0
 	var/welded = 0
+	var/large = 1
 	var/wall_mounted = 0 //never solid (You can always pass over it)
 	var/health = 100
 	var/lastbang
@@ -169,7 +170,11 @@
 /obj/structure/closet/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(src.opened)
 		if(istype(W, /obj/item/weapon/grab))
-			src.MouseDrop_T(W:affecting, user)      //act like they were dragged onto the closet
+			if(src.large)
+				var/obj/item/weapon/grab/G = W
+				src.MouseDrop_T(G.affecting, user)	//act like they were dragged onto the closet
+			else
+				user << "<span class='notice'>The locker is too small to stuff [W] into!</span>"
 
 		if(istype(W, /obj/item/weapon/weldingtool))
 			var/obj/item/weapon/weldingtool/WT = W
