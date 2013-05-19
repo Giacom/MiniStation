@@ -1,7 +1,12 @@
-/ministation.int
-/ministation.lk
-/ministation.rsc
-/ministation.rsc.lk
-/*.dmb
-/ministation.dyn.rsc
-/Map.png
+#Files and folders specified here will never be tracked.
+
+*.ban
+*.bdb
+*.log
+*.sav
+
+#Compiled files and other files generated during compilation.
+*.dmb
+*.rsc
+*.lk
+*.int

@@ -10,9 +10,7 @@
 	update_icon = 0		///no need to call regenerate_icon
 
 /mob/living/carbon/monkey/New()
-	var/datum/reagents/R = new/datum/reagents(1000)
-	reagents = R
-	R.my_atom = src
+	create_reagents(1000)
 
 	internal_organs += new /obj/item/organ/appendix
 	internal_organs += new /obj/item/organ/heart
@@ -59,7 +57,7 @@
 			tmob.LAssailant = src
 		now_pushing = 0
 		..()
-		if (!( istype(AM, /atom/movable) ))
+		if (!istype(AM, /atom/movable) || !istype(AM.loc, /turf))
 			return
 		if (!( now_pushing ))
 			now_pushing = 1

@@ -109,6 +109,8 @@
 	var/silent_ai = 0
 	var/silent_borg = 0
 
+	var/sandbox_autoclose = 0 // close the sandbox panel after spawning an item, potentially reducing griff
+
 
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
@@ -343,6 +345,8 @@
 					config.silent_ai 				= 1
 				if("silent_borg")
 					config.silent_borg				= 1
+				if("sandbox_autoclose")
+					config.sandbox_autoclose		= 1
 				else
 					diary << "Unknown setting in configuration: '[name]'"
 
