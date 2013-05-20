@@ -18,7 +18,7 @@
 	var/const/waittime_l = 600 //lower bound on time before intercept arrives (in tenths of seconds)
 	var/const/waittime_h = 1800 //upper bound on time before intercept arrives (in tenths of seconds)
 
-	var/traitors_possible = 4 //hard limit on traitors if scaling is turned off
+	var/traitors_possible = 2 //hard limit on traitors if scaling is turned off
 	var/const/traitor_scaling_coeff = 5.0 //how much does the amount of players get divided by to determine traitors
 
 

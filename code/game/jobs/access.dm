@@ -224,13 +224,13 @@
 		if(2) //medbay
 			return list(access_medical, access_chemistry, access_surgery)
 		if(3) //research
-			return list(access_research, access_tox)
+			return list(access_research, access_tox, access_robotics)
 		if(4) //engineering and maintenance
 			return list(access_maint_tunnels, access_engine_equip, access_tech_storage, access_construction, access_engine, access_external_airlocks, access_tcomsat, access_atmospherics)
 		if(5) //command
 			return list(access_heads, access_RC_announce, access_keycard_auth, access_change_ids, access_eva, access_all_personal_lockers, access_hop, access_captain)
 		if(6) //station general
-			return list(access_bar, access_janitor)
+			return list(access_bar, access_janitor, access_clown)
 		if(7) //supply
 			return list(access_mining, access_cargo, access_qm)
 

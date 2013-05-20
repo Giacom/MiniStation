@@ -175,7 +175,7 @@
 			H.equip_to_slot_or_del(new /obj/item/weapon/storage/bag/ore(H), slot_in_backpack)
 		return 1
 
-
+*/
 
 //Griff
 /datum/job/clown
@@ -208,7 +208,7 @@
 		H.mutations.Add(CLUMSY)
 		return 1
 
-
+/*
 
 /datum/job/mime
 	title = "Mime"

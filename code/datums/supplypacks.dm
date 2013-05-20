@@ -463,7 +463,7 @@
 	cost = 10
 	containertype = /obj/structure/closet/crate/secure
 	containername = "emitter crate"
-	access = access_ce
+	access = access_engine_equip
 
 /datum/supply_packs/engine/field_gen
 	name = "Field Generator crate"
@@ -471,14 +471,14 @@
 					/obj/machinery/field_generator)
 	containertype = /obj/structure/closet/crate/secure
 	containername = "field generator crate"
-	access = access_ce
+	access = access_engine_equip
 
 /datum/supply_packs/engine/sing_gen
 	name = "Singularity Generator crate"
 	contains = list(/obj/machinery/the_singularitygen)
 	containertype = /obj/structure/closet/crate/secure
 	containername = "singularity generator crate"
-	access = access_ce
+	access = access_engine_equip
 
 /datum/supply_packs/engine/collector
 	name = "Collector crate"
@@ -499,7 +499,7 @@
 					/obj/structure/particle_accelerator/end_cap)
 	containertype = /obj/structure/closet/crate/secure
 	containername = "particle accelerator crate"
-	access = access_ce
+	access = access_engine_equip
 
 /datum/supply_packs/mecha_ripley
 	name = "Circuit Crate (\"Ripley\" APLU)"
@@ -675,7 +675,19 @@
 	cost = 20
 	containertype = /obj/structure/closet/crate/secure
 	containername = "shield generators crate"
-	access = access_teleporter
+	access = access_research
+
+/datum/supply_packs/slimecores
+	name = "Slime Cores"
+	contains = list(/obj/item/slime_extract/grey,
+					/obj/item/slime_extract/grey,
+					/obj/item/slime_extract/grey)
+	cost = 30
+	containertype = /obj/structure/closet/crate/secure
+	containername = "slime cores crate"
+	access = access_research
+
+
 
 /datum/supply_packs/randomised
 	var/num_contained = 3 //number of items picked to be contained in a randomised crate

@@ -243,7 +243,7 @@ datum/preferences
 		popup.set_content(dat)
 		popup.open(0)
 
-	proc/SetChoices(mob/user, limit = 17, list/splitJobs = list("Chief Engineer"), width = 300, height = 450)
+	proc/SetChoices(mob/user, limit = 17, list/splitJobs = list("Chief Engineer"), width = 300, height = 460)
 		if(!job_master)	return
 
 		//limit 	 - The amount of jobs allowed per column. Defaults to 17 to make it look nice.
@@ -522,7 +522,7 @@ datum/preferences
 						var/new_hair = input(user, "Choose your character's hair colour:", "Character Preference") as null|color
 						if(new_hair)
 							h_color = sanitize_hexcolor(new_hair)
-							
+
 
 					if("h_style")
 						var/new_h_style
