@@ -40,7 +40,7 @@ Many jobs have been combined or just plainly cut out. These are the remaining jo
  * Lieutenant - You're second in command, protect the Captain and be his right hand man.
  * Cargo Miner x2 - Running cargo bay and mining minerals for the station.
  * Bartender - Keeping the bar, serving drinks and food. Hire the unemployeed to grow food for you, or do it yourself.
- * Janitor - Cleans the station, removes litter.
+ * Janitor - Cleans the station, removes litter and empty trash bins to be recycled by the crusher.
  * Station Engineer x3 - Keeping the power running and fixing station damage.
  * Security Officer x2 - Protecting the crewmembers and serving space law.
  * Detective - Using forensic science to help security officers catch criminals.
