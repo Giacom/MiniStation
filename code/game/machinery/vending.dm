@@ -562,7 +562,7 @@
 	icon_deny = "nutri-deny"
 	products = list(/obj/item/nutrient/ez = 35,/obj/item/nutrient/l4z = 25,/obj/item/nutrient/rh = 15,/obj/item/weapon/pestspray = 20,
 					/obj/item/weapon/reagent_containers/syringe = 5,/obj/item/weapon/storage/bag/plants = 5, /obj/item/device/analyzer/plant_analyzer = 5, /obj/item/weapon/minihoe = 5)
-	contraband = list(/obj/item/weapon/hatchet = 2, /obj/item/weapon/reagent_containers/glass/bottle/ammonia = 10,/obj/item/weapon/reagent_containers/glass/bottle/diethylamine = 5)
+	contraband = list(/obj/item/weapon/reagent_containers/spray/plantbgone = 2, /obj/item/weapon/hatchet = 2, /obj/item/weapon/reagent_containers/glass/bottle/ammonia = 10,/obj/item/weapon/reagent_containers/glass/bottle/diethylamine = 5)
 
 /obj/machinery/vending/hydroseeds
 	name = "\improper MegaSeed Servitor"
