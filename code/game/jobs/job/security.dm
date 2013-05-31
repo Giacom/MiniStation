@@ -5,7 +5,7 @@
 		return list(access_maint_tunnels)
 	return list()
 
-
+/*
 /datum/job/hos
 	title = "Head of Security"
 	flag = HOS
@@ -96,7 +96,7 @@
 	var/list/L = list()
 	L = ..() | check_config_for_sec_maint()
 	return L
-
+*/
 /datum/job/detective
 	title = "Detective"
 	flag = DETECTIVE
