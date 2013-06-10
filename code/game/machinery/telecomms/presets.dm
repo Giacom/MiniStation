@@ -119,11 +119,10 @@
 
 
 //Servers
-
+*/
 /obj/machinery/telecomms/server/presets
-
 	network = "tcommsat"
-
+/*
 /obj/machinery/telecomms/server/presets/science
 	id = "Science Server"
 	freq_listening = list(1351)
