@@ -59,7 +59,7 @@ var/diary = null
 var/diaryofmeanpeople = null
 var/href_logfile = null
 var/station_name = null
-var/game_version = "/tg/ Station 13"
+var/game_version = "Ministation"
 var/changelog_hash = ""
 
 var/going = 1.0
@@ -69,7 +69,6 @@ var/secret_force_mode = "secret" // if this is anything but "secret", the secret
 var/host = null
 var/ooc_allowed = 1
 var/dooc_allowed = 1
-var/traitor_scaling = 1
 var/dna_ident = 1
 var/abandon_allowed = 1
 var/enter_allowed = 1

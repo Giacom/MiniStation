@@ -244,7 +244,7 @@ var/turf/space/Space_Tile = locate(/turf/space) // A space tile to reference whe
 #define GAS_N2O	(1 << 4)
 
 
-var/list/accessable_z_levels = list("1" = 20, "4" = 40, "5" = 40)
+var/list/accessable_z_levels = list("1" = 5, "3" = 10, "4" = 15, "5" = 10, "6" = 60)
 //This list contains the z-level numbers which can be accessed via space travel and the percentile chances to get there.
 //(Exceptions: extended, sandbox and nuke) -Errorage
 //Was list("3" = 30, "4" = 70).
@@ -457,3 +457,13 @@ var/list/be_special_flags = list(
 
 #define DNA_STRUC_ENZYMES_BLOCKS	14
 #define DNA_UNIQUE_ENZYMES_LEN		32
+
+//Transformation proc stuff
+#define TR_KEEPITEMS	1
+#define TR_KEEPVIRUS	2
+#define TR_KEEPDAMAGE	4
+#define TR_HASHNAME		8	// hashing names (e.g. monkey(e34f)) (only in monkeyize)
+#define TR_KEEPIMPLANTS	16
+#define TR_KEEPSE		32 // changelings shouldn't edit the DNA's SE when turning into a monkey
+#define TR_DEFAULTMSG	64
+#define TR_KEEPSRC		128

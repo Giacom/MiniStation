@@ -78,16 +78,16 @@ ALERT_DELTA The station's self-destruct mechanism has been engaged. All crew are
 ## Set to 0 to disable that mode.
 
 PROBABILITY TRAITOR 5
-PROBABILITY TRAITORCHAN 4
-PROBABILITY NUCLEAR 2
-PROBABILITY REVOLUTION 2
-PROBABILITY CULT 2
+PROBABILITY TRAITORCHAN 3
+PROBABILITY NUCLEAR 0
+PROBABILITY REVOLUTION 0
+PROBABILITY CULT 0
 PROBABILITY CHANGELING 2
-PROBABILITY WIZARD 4
-PROBABILITY MALFUNCTION 1
+PROBABILITY WIZARD 0
+PROBABILITY MALFUNCTION 0
 PROBABILITY BLOB 0
 PROBABILITY METEOR 0
-PROBABILITY EXTENDED 0
+PROBABILITY EXTENDED 3
 
 ## You probably want to keep sandbox off by default for secret and random.
 PROBABILITY SANDBOX 0
@@ -95,11 +95,16 @@ PROBABILITY SANDBOX 0
 ## Uncomment to make rounds which end instantly (Rev, Wizard, Malf) continue until
 ## the shuttle is called or the station is nuked.
 ## Malf and Rev will let the shuttle be called when the antags/protags are dead.
-#CONTINUOUS_ROUNDS
+#CONTINUOUS_ROUND_REV
+#CONTINUOUS_ROUND_WIZ
+#CONTINUOUS_ROUND_MALF
 
-## Uncomment to scale the number of antagonists to crew population. Doesn't
-## affect all gamemodes.
-#TRAITOR_SCALING
+
+## Variables calculate how number of antagonists will scale to population.
+## Used as (Antagonists = Population / Coeff)
+## Set to 0 to disable scaling and use default numbers instead.
+TRAITOR_SCALING_COEFF 10
+CHANGELING_SCALING_COEFF 15
 
 ## Uncomment to prohibit jobs that start with loyalty
 ## implants from being most antagonists.
@@ -117,7 +122,7 @@ ALLOW_RANDOM_EVENTS
 ### AI ###
 
 ## Allow the AI job to be picked.
-ALLOW_AI
+#ALLOW_AI
 
 
 
@@ -139,7 +144,7 @@ JOBS_HAVE_MINIMAL_ACCESS
 #ASSISTANTS_HAVE_MAINT_ACCESS
 
 ## Uncoment to give security maint access. Note that if you comment JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
-#SECURITY_HAS_MAINT_ACCESS
+SECURITY_HAS_MAINT_ACCESS
 
 ## Uncomment to give everyone maint access.
 #EVERYONE_HAS_MAINT_ACCESS

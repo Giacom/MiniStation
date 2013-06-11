@@ -1,4 +1,4 @@
-/*/datum/job/ai
+/datum/job/ai
 	title = "AI"
 	flag = AI
 	department_flag = ENGSEC
@@ -15,7 +15,7 @@
 		return 1
 
 
-
+/*
 /datum/job/cyborg
 	title = "Cyborg"
 	flag = CYBORG
