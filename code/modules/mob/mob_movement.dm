@@ -211,16 +211,16 @@
 		return 0	//This is sota the goto stop mobs from moving var
 	if(mob.control_object)
 		return Move_object(direct)
-	if(isobserver(mob))
-		return mob.Move(n,direct)
-	if(moving)
-		return 0
 	if(world.time < move_delay)
-		return 0
-	if(mob.stat == DEAD)
 		return 0
 	if(isAI(mob))
 		return AIMove(n,direct,mob)
+	if(!isliving(mob))
+		return mob.Move(n,direct)
+	if(moving)
+		return 0
+	if(mob.stat == DEAD)
+		return 0
 	if(isliving(mob))
 		var/mob/living/L = mob
 		if(L.incorporeal_move)	//Move though walls
@@ -486,3 +486,20 @@
 
 	prob_slip = round(prob_slip)
 	return(prob_slip)
+
+/mob/proc/Move_Pulled(var/atom/A)
+	if (!canmove || restrained() || !pulling)
+		return
+	if (pulling.anchored)
+		return
+	if ((pulling.loc != loc && get_dist(src, pulling) > 1) || !isturf(pulling.loc))
+		return
+	if (ismob(pulling))
+		var/mob/M = pulling
+		var/atom/movable/t = M.pulling
+		M.stop_pulling()
+		step(pulling, get_dir(pulling.loc, A))
+		M.start_pulling(t)
+	else
+		step(pulling, get_dir(pulling.loc, A))
+	return

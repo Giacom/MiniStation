@@ -228,8 +228,9 @@ var/list/uplink_items = list()
 
 /datum/uplink_item/device_tools/syndicate_bomb
 	name = "Syndicate Bomb (DANGER!)"
-	item = /obj/item/weapon/syndicatebomb
+	item = /obj/item/device/sbeacondrop/bomb
 	cost = 7
+
 /*
 /datum/uplink_item/device_tools/teleporter
 	name = "Teleporter Circuit Board"

@@ -143,6 +143,7 @@
 				V.show_message("[usr] starts climbing into the disposal.", 3)
 			if(target != user && !user.restrained() && !user.stat && !user.weakened && !user.stunned && !user.paralysis)
 				if(target.anchored) return
+				if(!ishuman(user) && !ismonkey(user)) return
 				V.show_message("[usr] starts stuffing [target.name] into the disposal.", 3)
 		if(!do_after(usr, 20))
 			return
@@ -1044,22 +1045,6 @@
 
 		update()
 		return
-
-	New()
-		..()
-		posdir = dir
-		if(icon_state == "pipe-j1s")
-			sortdir = turn(posdir, -90)
-			negdir = turn(posdir, 180)
-		else
-			icon_state = "pipe-j2s"
-			sortdir = turn(posdir, 90)
-			negdir = turn(posdir, 180)
-		dpdir = sortdir | posdir | negdir
-
-		update()
-		return
-
 
 	// next direction to move
 	// if coming in from negdir, then next is primary dir or sortdir

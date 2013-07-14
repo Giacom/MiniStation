@@ -619,7 +619,7 @@ proc/process_ghost_teleport_locs()
 
 /area/bridge/meeting_room
 	name = "\improper Heads of Staff Meeting Room"
-	icon_state = "bridge"
+	icon_state = "meeting"
 	music = null
 
 /area/crew_quarters/captain
@@ -631,7 +631,7 @@ proc/process_ghost_teleport_locs()
 	icon_state = "courtroom"
 
 /area/crew_quarters/heads
-	name = "\improper Lieutenant's Office"
+	name = "\improper Human Resources"
 	icon_state = "head_quarters"
 
 /area/crew_quarters/hor
