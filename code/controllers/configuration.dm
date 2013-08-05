@@ -118,7 +118,6 @@
 	var/gateway_delay = 18000 //How long the gateway takes before it activates. Default is half an hour.
 	var/ghost_interaction = 0
 
-	var/general_channel_headset = 0
 	var/silent_ai = 0
 	var/silent_borg = 0
 
@@ -277,8 +276,6 @@
 
 		else if(type == "game_options")
 			switch(name)
-				if("general_channel_headset")
-					config.general_channel_headset = 1
 				if("health_threshold_crit")
 					config.health_threshold_crit	= text2num(value)
 				if("health_threshold_dead")

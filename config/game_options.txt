@@ -67,11 +67,6 @@ ALERT_DELTA The station's self-destruct mechanism has been engaged. All crew are
 
 #USE_RECURSIVE_EXPLOSIONS
 
-### COMMUNICATION ###
-
-## Comment this to disallow people to use their headsets for non-department frequencies
-GENERAL_CHANNEL_HEADSET
-
 ### GAME MODES ###
 
 ## Probablities for game modes chosen in 'secret' and 'random' modes.
