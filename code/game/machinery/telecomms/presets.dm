@@ -117,11 +117,15 @@
 	autolinkers = list("processor4")
 
 
-
 //Servers
 */
+
 /obj/machinery/telecomms/server/presets
 	network = "tcommsat"
+
+/obj/machinery/telecomms/server/presets/New()
+	..()
+	name = id
 /*
 /obj/machinery/telecomms/server/presets/science
 	id = "Science Server"
@@ -144,7 +148,7 @@
 	autolinkers = list("mining")
 */
 /obj/machinery/telecomms/server/presets/common
-	id = "Common Server"
+	id = "Telecommunications Server"
 	freq_listening = list()
 	autolinkers = list("common")
 /*
