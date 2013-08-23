@@ -151,6 +151,8 @@
 	total_positions = 2
 	spawn_positions = 2
 	selection_color = "#ffeeee"
+	selection_color = "#ffeeee"
+	access = list(access_security, access_sec_doors, access_brig, access_court)
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_court)
 	minimal_player_age = 7
 
