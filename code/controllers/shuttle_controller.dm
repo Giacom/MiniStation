@@ -5,9 +5,9 @@
 
 // these define the time taken for the shuttle to get to SS13
 // and the time before it leaves again
-#define SHUTTLEARRIVETIME 600		// 10 minutes = 600 seconds
-#define SHUTTLELEAVETIME 180		// 3 minutes = 180 seconds
-#define SHUTTLETRANSITTIME 120		// 2 minutes = 120 seconds
+#define SHUTTLEARRIVETIME 300		// 5 minutes
+#define SHUTTLELEAVETIME 120		// 2 minutes
+#define SHUTTLETRANSITTIME 60		// 1 minutes
 #define SHUTTLEAUTOCALLTIMER 1.0
 
 var/global/datum/shuttle_controller/emergency_shuttle/emergency_shuttle
@@ -36,12 +36,12 @@ datum/shuttle_controller
 			settimeleft(SHUTTLEARRIVETIME*coeff)
 			online = 1
 			if(always_fake_recall)
-				fake_recall = rand(300,500)
+				fake_recall = rand(SHUTTLEARRIVETIME / 2, SHUTTLEARRIVETIME - 100)
 
 	proc/recall()
 		if(direction == 1)
 			var/timeleft = timeleft()
-			if(timeleft >= 600)
+			if(timeleft >= SHUTTLEARRIVETIME)
 				online = 0
 				direction = 1
 				endtime = null
