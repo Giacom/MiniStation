@@ -64,10 +64,17 @@ There are no plans to add a starting AI but you are still able to construct an A
 **Current Goal:**
 
  * Polish the gameplay.
+ * Polish the map.
+ 
+**Can I Contribute?**
+
+ Yes but I want to try and keep the mod as compatible with /tg/station as possible, meaning all features should be modular.
+ Map changes are acceptable but it is hard for me to look at what was changed, so I'll need a list of changes you have made.
+ You can then make a pull request and I will review it.
 
 **Map Screenshot**:
 
-[View High Quality Map](http://filesmelt.com/dl/Map59.png)
+[View High Quality Map](http://filesmelt.com/dl/ministation.png)
 
 INSTALLATION
 ============
