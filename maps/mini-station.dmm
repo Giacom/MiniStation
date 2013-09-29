@@ -1200,7 +1200,7 @@
 "xd" = (/obj/machinery/atmospherics/unary/vent_pump{dir = 2; on = 1},/turf/simulated/floor,/area/engine/engineering)
 "xe" = (/obj/machinery/power/terminal{icon_state = "term"; dir = 1},/obj/structure/cable{icon_state = "0-2"; d2 = 2},/turf/simulated/floor{dir = 1; icon_state = "warning"},/area/engine/engineering)
 "xf" = (/obj/machinery/atmospherics/unary/vent_scrubber{on = 1; scrub_N2O = 0; scrub_Toxins = 0},/turf/simulated/floor,/area/engine/engineering)
-"xg" = (/obj/machinery/power/monitor,/obj/structure/cable,/turf/simulated/floor,/area/engine/engineering)
+"xg" = (/obj/machinery/computer/monitor,/obj/structure/cable,/turf/simulated/floor,/area/engine/engineering)
 "xh" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/machinery/vending/coffee,/turf/simulated/floor,/area/hallway/primary/central)
 "xi" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/obj/machinery/vending/cigarette{pixel_x = 0; pixel_y = 0},/turf/simulated/floor,/area/hallway/primary/central)
 "xj" = (/obj/structure/rack{dir = 8; layer = 2.9},/obj/item/clothing/mask/gas{pixel_x = 3; pixel_y = 3},/obj/item/clothing/mask/gas,/obj/item/clothing/mask/gas{pixel_x = -3; pixel_y = -3},/obj/item/device/flashlight{pixel_x = 1; pixel_y = 5},/turf/simulated/floor,/area/engine/engineering)
