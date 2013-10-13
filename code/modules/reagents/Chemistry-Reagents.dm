@@ -1329,12 +1329,12 @@ datum
 					if (egg.grown)
 						egg.Hatch()*/
 				if((!O) || (!volume))	return 0
-				O.atmos_spawn_air("fuel", 5)
+				O.atmos_spawn_air(SPAWN_TOXINS, volume)
 
 			reaction_turf(var/turf/simulated/T, var/volume)
 				src = null
 				if(istype(T))
-					T.atmos_spawn_air("fuel", 5)
+					T.atmos_spawn_air(SPAWN_TOXINS, volume)
 				return
 
 			reaction_mob(var/mob/living/M, var/method=TOUCH, var/volume)//Splashing people with plasma is stronger than fuel!
@@ -1512,6 +1512,21 @@ datum
 				..()
 				return
 
+
+		toxin/spore
+			name = "Spore Toxin"
+			id = "spore"
+			description = "A toxic spore cloud which blocks vision when ingested."
+			reagent_state = LIQUID
+			color = "#9ACD32"
+			toxpwr = 0.5
+
+			on_mob_life(var/mob/living/M as mob)
+				..()
+				M.damageoverlaytemp = 60
+				M.eye_blurry = max(M.eye_blurry, 3)
+				return
+
 		toxin/chloralhydrate
 			name = "Chloral Hydrate"
 			id = "chloralhydrate"
@@ -1646,6 +1661,73 @@ datum
 			color = "#8E18A9" // rgb: 142, 24, 169
 			toxpwr = 2
 			meltprob = 30
+
+/////////////////////////Coloured Crayon Powder////////////////////////////
+//For colouring in /proc/mix_color_from_reagents
+
+
+		crayonpowder
+			name = "Crayon Powder"
+			id = "crayon powder"
+			var/colorname = "none"
+			description = "A powder made by grinding down crayons, good for colouring chemical reagents."
+			reagent_state = SOLID
+			color = "#FFFFFF" // rgb: 207, 54, 0
+			New()
+				description = "\an [colorname] powder made by grinding down crayons, good for colouring chemical reagents."
+
+
+		crayonpowder/red
+			name = "Red Crayon Powder"
+			id = "redcrayonpowder"
+			colorname = "red"
+			color = "#DA0000" // red
+			New()
+				..()
+
+		crayonpowder/orange
+			name = "Orange Crayon Powder"
+			id = "orangecrayonpowder"
+			colorname = "orange"
+			color = "#FF9300" // orange
+			New()
+				..()
+
+
+		crayonpowder/yellow
+			name = "Yellow Crayon Powder"
+			id = "yellowcrayonpowder"
+			colorname = "yellow"
+			color = "#FFF200" // yellow
+			New()
+				..()
+
+
+		crayonpowder/green
+			name = "Green Crayon Powder"
+			id = "greencrayonpowder"
+			colorname = "green"
+			color = "#A8E61D" // green
+			New()
+				..()
+
+
+		crayonpowder/blue
+			name = "Blue Crayon Powder"
+			id = "bluecrayonpowder"
+			colorname = "blue"
+			color = "#00B7EF" // blue
+			New()
+				..()
+
+		crayonpowder/purple
+			name = "Purple Crayon Powder"
+			id = "purplecrayonpowder"
+			colorname = "purple"
+			color = "#DA00FF" // purple
+			New()
+				..()
+
 
 /////////////////////////Food Reagents////////////////////////////
 // Part of the food code. Nutriment is used instead of the old "heal_amt" code. Also is where all the food
@@ -1838,8 +1920,11 @@ datum
 				return
 
 			reaction_turf(var/turf/simulated/T, var/volume)
-				for(var/mob/living/carbon/slime/M in T)
-					M.adjustToxLoss(rand(15,30))
+				if(volume >= 5)
+					for(var/mob/living/carbon/slime/M in T)
+						M.adjustToxLoss(rand(15,30))
+					//if(istype(T))
+					//	T.atmos_spawn_air(SPAWN_COLD)
 
 		sodiumchloride
 			name = "Table Salt"
