@@ -1448,7 +1448,7 @@
 "BR" = (/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -22},/obj/machinery/camera/autoname{dir = 1},/obj/item/device/flashlight{pixel_x = 1; pixel_y = 5},/turf/simulated/floor/plating,/area/engine/engineering)
 "BS" = (/obj/machinery/firealarm{dir = 1; pixel_y = -24},/obj/machinery/atmospherics/pipe/simple{pipe_color = "red"; dir = 5; icon_state = "intact-r"; level = 2},/turf/simulated/floor/plating,/area/engine/engineering)
 "BT" = (/obj/machinery/atmospherics/pipe/simple{icon_state = "intact-r"; dir = 9; level = 2; pipe_color = "red"},/turf/simulated/floor/plating,/area/engine/engineering)
-"BU" = (/obj/machinery/computer/security/telescreen{desc = "Used for watching the burn chamber."; dir = 8; layer = 4; name = "Burn Chamber Telescreen"; network = "burnchamber"; pixel_x = 0; pixel_y = -30},/obj/structure/stool,/turf/simulated/floor/plating,/area/engine/engineering)
+"BU" = (/obj/machinery/computer/security/telescreen{desc = "Used for watching the burn chamber."; dir = 8; layer = 4; name = "Burn Chamber Telescreen"; network = list("burnchamber"); pixel_x = 0; pixel_y = -30},/obj/structure/stool,/turf/simulated/floor/plating,/area/engine/engineering)
 "BV" = (/obj/machinery/light,/turf/simulated/floor/plating,/area/engine/engineering)
 "BW" = (/obj/machinery/ignition_switch{id = "burnchamber"; pixel_x = 25},/turf/simulated/floor/plating,/area/engine/engineering)
 "BX" = (/obj/machinery/atmospherics/pipe/simple{pipe_color = "red"; dir = 5; icon_state = "intact-r"; level = 2},/obj/machinery/sparker{id = "burnchamber"; pixel_x = -25},/turf/simulated/floor/engine/vacuum,/area/engine/engineering)
