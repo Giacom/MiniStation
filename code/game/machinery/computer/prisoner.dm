@@ -24,7 +24,7 @@
 			dat += "<H3>Prisoner ID Management</H3>"
 			if(istype(inserted_id))
 				dat += text("<A href='?src=\ref[src];id=eject'>[inserted_id]</A><br>")
-				dat += text("Collectd Points: [inserted_id.points]. <A href='?src=\ref[src];id=reset'>Reset.</A><br>")
+				dat += text("Collected Points: [inserted_id.points]. <A href='?src=\ref[src];id=reset'>Reset.</A><br>")
 				dat += text("Card goal: [inserted_id.goal].  <A href='?src=\ref[src];id=setgoal'>Set </A><br>")
 			else
 				dat += text("<A href='?src=\ref[src];id=insert'>Insert Prisoner ID.</A><br>")
