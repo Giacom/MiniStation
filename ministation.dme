@@ -1172,7 +1172,6 @@
 #include "code\modules\surgery\implant_removal.dm"
 #include "code\modules\surgery\limb augmentation.dm"
 #include "code\modules\surgery\lipoplasty.dm"
-#include "code\modules\surgery\multiple_location_example.dm"
 #include "code\modules\surgery\plastic_surgery.dm"
 #include "code\modules\surgery\surgery.dm"
 #include "code\modules\surgery\surgery_step.dm"
