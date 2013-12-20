@@ -246,7 +246,7 @@
 		if(!prevent_warning && !istype(W, /obj/item/weapon/gun/energy/crossbow))
 			for(var/mob/M in viewers(usr, null))
 				if(M == usr)
-					usr << "<span class='notice'>You put \the [W] into [src].</span>"
+					usr << "<span class='notice'>You put [W] into [src].</span>"
 				else if(in_range(M, usr)) //If someone is standing close enough, they can tell what it is...
 					M.show_message("<span class='notice'>[usr] puts [W] into [src].</span>")
 				else if(W && W.w_class >= 3.0) //Otherwise they can only see large or normal items from a distance...
@@ -300,10 +300,10 @@
 
 	if(isrobot(user))
 		user << "<span class='notice'>You're a robot. No.</span>"
-		return 1	//Robots can't interact with storage items.
+		return 0	//Robots can't interact with storage items.
 
 	if(!can_be_inserted(W))
-		return 1
+		return 0
 
 	if(istype(W, /obj/item/weapon/tray))	//THIS ISN'T HOW OOP WORKS
 		var/obj/item/weapon/tray/T = W
