@@ -15,6 +15,9 @@
 	var/obj/screen/inv2 = null
 	var/obj/screen/inv3 = null
 
+	var/shown_robot_modules = 0	//Used to determine whether they have the module menu shown or not
+	var/obj/screen/robot_modules_background
+
 //3 Modules can be activated at any one time.
 	var/obj/item/weapon/robot_module/module = null
 	var/module_active = null
@@ -66,6 +69,10 @@
 	spark_system.attach(src)
 
 	wires = new(src)
+
+	robot_modules_background = new()
+	robot_modules_background.icon_state = "block"
+	robot_modules_background.layer = 19	//Objects that appear on screen are on layer 20, UI should be just below it.
 
 	ident = rand(1, 999)
 	updatename("Default")
@@ -292,24 +299,12 @@
 
 
 /mob/living/silicon/robot/ex_act(severity)
-	if(!blinded)
-		flick("flash", flash)
-
-	if (stat == 2 && client)
-		gib()
-		return
-
-	else if (stat == 2 && !client)
-		del(src)
-		return
+	..()
 
 	switch(severity)
 		if(1.0)
-			if (stat != 2)
-				adjustBruteLoss(100)
-				adjustFireLoss(100)
-				gib()
-				return
+			gib()
+			return
 		if(2.0)
 			if (stat != 2)
 				adjustBruteLoss(60)
@@ -318,7 +313,7 @@
 			if (stat != 2)
 				adjustBruteLoss(30)
 
-	updatehealth()
+	return
 
 
 /mob/living/silicon/robot/meteorhit(obj/O as obj)
@@ -603,7 +598,6 @@
 
 			M.put_in_active_hand(G)
 
-			grabbed_by += G
 			G.synch()
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 			for(var/mob/O in viewers(src, null))
@@ -884,31 +878,7 @@
 
 	if (href_list["act"])
 		var/obj/item/O = locate(href_list["act"])
-		if(!(locate(O) in src.module.modules) && O != src.module.emag)
-			return
-		if(activated(O))
-			src << "Already activated"
-			return
-		if(!module_state_1)
-			module_state_1 = O
-			O.layer = 20
-			contents += O
-			if(istype(module_state_1,/obj/item/borg/sight))
-				sight_mode |= module_state_1:sight_mode
-		else if(!module_state_2)
-			module_state_2 = O
-			O.layer = 20
-			contents += O
-			if(istype(module_state_2,/obj/item/borg/sight))
-				sight_mode |= module_state_2:sight_mode
-		else if(!module_state_3)
-			module_state_3 = O
-			O.layer = 20
-			contents += O
-			if(istype(module_state_3,/obj/item/borg/sight))
-				sight_mode |= module_state_3:sight_mode
-		else
-			src << "You need to disable a module first!"
+		activate_module(O)
 		installed_modules()
 
 	if (href_list["deact"])
@@ -971,6 +941,10 @@
 		return
 
 /mob/living/silicon/robot/proc/self_destruct()
+	if(emagged)
+		explosion(src.loc,1,2,4,flame_range = 2)
+	else
+		explosion(src.loc,-1,0,2)
 	gib()
 	return
 
