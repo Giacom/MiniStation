@@ -1,14 +1,19 @@
 MiniStation Mod
 ================================
 
-Code: https://github.com/Giacomand/MiniStation
-Created By: Giacomand/Giacom
+Code: https://github.com/Giacom/MiniStation
+
+Discussion Thread: http://www.ss13.eu/phpbb/viewtopic.php?f=3&t=71
+
+Created By: Giacom
 
 Original TG Station
 ================================
 
-Website: http://nanotrasen.com
+Website: http://www.ss13.eu/
+
 Code: https://github.com/tgstation/-tg-station
+
 IRC: irc://irc.rizon.net/tgstation13
 
 Mini-TG station
