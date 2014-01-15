@@ -14,4 +14,3 @@ Depress = Game Master
 Snake2512 = Badmin
 Miggles = Miggles
 CrimsonVision = Coder
-min
