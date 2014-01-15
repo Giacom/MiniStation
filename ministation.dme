@@ -1200,7 +1200,7 @@
 #include "interface\interface.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
-#include "maps\tgstation.2.1.2.dmm"
+#include "maps\mini-station.dmm"
 #include "maps\RandomZLevels\Academy.dm"
 #include "maps\RandomZLevels\blackmarketpackers.dm"
 #include "maps\RandomZLevels\centcomAway.dm"
