@@ -39,7 +39,7 @@
 	icon_state = "nun_hood"
 	flags = HEADCOVERSEYES|BLOCKHAIR
 
-/obj/item/clothing/head/det_hat
+/obj/item/weapon/storage/det_hat
 	name = "hat"
 	desc = "Someone who wears this will look very smart."
 	icon_state = "detective"

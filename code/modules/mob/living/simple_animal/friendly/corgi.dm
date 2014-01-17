@@ -217,7 +217,7 @@
 			emote_see = list("cowers in fear", "surrenders", "plays dead","looks as though there is a wall in front of him")
 			valid = 1
 
-		if(/obj/item/clothing/head/det_hat)
+		if(/obj/item/weapon/storage/det_hat)
 			name = "Detective [real_name]"
 			desc = "[name] sees through your lies..."
 			emote_see = list("investigates the area","sniffs around for clues","searches for scooby snacks")

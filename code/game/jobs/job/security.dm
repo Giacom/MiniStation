@@ -119,7 +119,7 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/det(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/brown(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/device/pda/detective(H), slot_belt)
-		H.equip_to_slot_or_del(new /obj/item/clothing/head/det_hat(H), slot_head)
+		H.equip_to_slot_or_del(new /obj/item/weapon/storage/det_hat(H), slot_head)
 		var/obj/item/clothing/mask/cigarette/CIG = new /obj/item/clothing/mask/cigarette(H)
 		CIG.light("")
 		H.equip_to_slot_or_del(CIG, slot_wear_mask)
