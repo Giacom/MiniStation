@@ -687,7 +687,7 @@ var/global/list/g_fancy_list_of_safe_types = null
 
 			M.equip_to_slot_or_del(new /obj/item/clothing/suit/det_suit(M), slot_wear_suit)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/thermal/monocle(M), slot_glasses)
-			M.equip_to_slot_or_del(new /obj/item/clothing/head/det_hat(M), slot_head)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/det_hat(M), slot_head)
 
 			M.equip_to_slot_or_del(new /obj/item/weapon/cloaking_device(M), slot_r_store)
 
