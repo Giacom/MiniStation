@@ -209,7 +209,7 @@
 		new /obj/item/clothing/under/det(src)
 		new /obj/item/clothing/suit/det_suit(src)
 		new /obj/item/clothing/gloves/black(src)
-		new /obj/item/clothing/head/det_hat(src)
+		new /obj/item/weapon/storage/det_hat(src)
 		new /obj/item/clothing/shoes/brown(src)
 		new /obj/item/weapon/storage/box/evidence(src)
 		new /obj/item/weapon/clipboard(src)
