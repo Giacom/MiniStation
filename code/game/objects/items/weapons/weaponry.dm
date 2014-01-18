@@ -129,3 +129,45 @@ obj/item/weapon/wirerod/attackby(var/obj/item/I, mob/user as mob)
 		user << "<span class='notice'>You fasten the wirecutters to the top of the rod with the cable, prongs outward.</span>"
 		del(I)
 		del(src)
+
+
+/obj/item/weapon/raidensword
+	name = "high frequency katana"
+	desc = "RULES OF NATURE"
+	icon_state = "raidensword"
+	item_state = "raidensword"
+	flags = FPRINT | TABLEPASS | CONDUCT
+
+	slot_flags = SLOT_BELT | SLOT_BACK
+	force = 70
+	throwforce = 99
+	w_class = 3
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("blade moded", "slashed", "stabbed", "zandatsued", "torn", "let 'er ripped", "diced", "rules of natured")
+
+	suicide_act(mob/user)
+		viewers(user) << "\red <b>[user] is slitting \his stomach open with the [src.name]! It looks like \he's trying to commit RULES OF NATURE.</b>"
+		return(BRUTELOSS)
+
+/obj/item/weapon/raidensword/IsShield()
+		return 1
+
+/obj/item/weapon/nigurslair
+	name = "Nigürslair"
+	desc = "The ancient sword summoned by Donkey for Shrek's quest for vengeance. It was thought to have been long lost. There's a foreign language etched onto the blade."
+	icon_state = "nigurslair"
+	item_state = "nigurslair"
+	flags = FPRINT | TABLEPASS | CONDUCT
+	slot_flags = SLOT_BELT
+	force = 85
+	throwforce = 99
+	w_class = 3
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("shreked", "layered", "onioned", "swamped")
+
+	suicide_act(mob/user)
+		viewers(user) << "\red <b>[user] is stabbing \himself with the [src.name]! It looks like \he's trying to commit suicide.</b>"
+		return(BRUTELOSS)
+
+/obj/item/weapon/nigurslair/IsShield()
+		return 1

@@ -1,4 +1,4 @@
-set MAPFILE=tgstation.2.1.2.dmm
+set MAPFILE=mini-station.dmm
 
 cd ../../maps
 copy %MAPFILE% %MAPFILE%.backup
