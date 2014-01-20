@@ -759,6 +759,9 @@ var/list/all_supply_groups = list(supply_emergency,supply_security,supply_engine
 	cost = 10
 	containername = "seeds crate"
 
+/obj/machinery/hydroponics/unattached
+	anchored = 0
+
 /datum/supply_packs/organic/hydroponics/hydro_tray
 	name = "Hydroponics Tray"
 	contains = list(/obj/machinery/hydroponics/unattached)
