@@ -1,3 +1,9 @@
+ATTENTION
+================================
+
+MiniStation has been merged with the main /tg/ repo and you can find all future updates for the mod there.  https://github.com/tgstation/-tg-station/blob/master/_maps/ministation.dm
+Just download the main /tg/ code and in the _maps directory tick/include ministation.dm; make sure nothing else is ticked.
+
 MiniStation Mod
 ================================
 
